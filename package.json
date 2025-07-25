@@ -1,14 +1,14 @@
 {
   "name": "nutechpay_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST API for NutechPay",
   "main": "src/app.js",  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node src/app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Imanul Aufa",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
