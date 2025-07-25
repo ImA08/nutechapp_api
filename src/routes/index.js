@@ -14,35 +14,35 @@ const bannerController = require('../controllers/banner.controller');
 const serviceController = require('../controllers/service.controller');
 
 // Auth
-router.post("/api/register", authCtrl.register);
-router.post("/api/login", authCtrl.login);
+router.post("/register", authCtrl.register);
+router.post("/login", authCtrl.login);
 
 // User Profile
-router.get('/api/profile', auth, userController.getProfile);
-router.put("/api/profile/update", auth, profileController.updateProfile)
+router.get('/profile', auth, userController.getProfile);
+router.put("/profile/update", auth, profileController.updateProfile)
 router.put(
-  "/api/profile/image",
+  "/profile/image",
   auth,
   upload.single('profile_image'),
   profileController.updateProfileImage
 );
 
 // Banners & Services
-router.get('/api/banner', bannerController.getBannerList);
-router.get('/api/services', auth, serviceController.getServiceList);
+router.get('/banner', bannerController.getBannerList);
+router.get('/services', auth, serviceController.getServiceList);
 
 
 // Transactions
-router.get("/api/balance", auth, balanceCtrl.getBalance);
-router.post("/api/topup", auth, topupCtrl.topup);
+router.get("/balance", auth, balanceCtrl.getBalance);
+router.post("/topup", auth, topupCtrl.topup);
 router.post(
-  "/api/payment/:service_code",
+  "/payment/:service_code",
   auth,
   paymentController.createTransaction
 );
-router.post("/api/transaction", auth, transactionController.createTransaction);
+router.post("/transaction", auth, transactionController.createTransaction);
 router.get(
-  "/api/transaction/history",
+  "/transaction/history",
   auth,
   paymentController.getTransactionHistory
 );
