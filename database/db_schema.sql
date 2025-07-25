@@ -49,7 +49,7 @@ CREATE TABLE topups (
 -- 6. Tabel transactions 
 CREATE TABLE transactions (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    invoice_number VARCHAR(50) NOT NULL UNIQUE, 
+    invoice_number VARCHAR(100) NOT NULL UNIQUE, 
     service_code VARCHAR(50),
     service_name VARCHAR(255),
     transaction_type VARCHAR(50) NOT NULL,
