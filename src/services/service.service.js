@@ -1,7 +1,14 @@
-const serviceRepo = require('../repositories//service.repository');
+const db = require("../db/pg");
+
+const getAllServices = async () => {
+  const result = await db.query(
+    "SELECT service_code, service_name, service_icon FROM services"
+  );
+  return result.rows;
+};
 
 const getServices = async () => {
-  const services = await serviceRepo.getAllServices();
+  const services = await getAllServices();
 
   return services.map((service) => ({
     service_code: service.service_code,

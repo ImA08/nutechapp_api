@@ -1,7 +1,7 @@
-const db = require('../db/pg');
+const db = require("../db/pg");
 
 async function getBalance(userId) {
-  const query = 'SELECT balance FROM balances WHERE user_id = $1';
+  const query = "SELECT balance FROM balances WHERE user_id = $1";
   const values = [userId];
 
   const result = await db.query(query, values);
@@ -9,5 +9,5 @@ async function getBalance(userId) {
 }
 
 module.exports = {
-  getBalance
+  getBalance,
 };
