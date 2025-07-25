@@ -31,6 +31,6 @@ exports.topup = async (req, res) => {
     res.json({ message: 'Top up berhasil' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Top up gagal' });
+    res.status(500).json({ message: 'Top up gagal', errorMsg : error });
   }
 };
