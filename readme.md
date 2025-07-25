@@ -1,71 +1,204 @@
 # NutechPay REST API
 
-NutechPay adalah REST API backend yang dibangun menggunakan Node.js dan Express, dengan PostgreSQL sebagai database. API ini menyediakan fitur otentikasi, pengelolaan saldo, top up, transaksi digital (seperti pulsa dan voucher game), serta pengambilan data layanan dan banner.
+NutechPay is a robust backend REST API built with Node.js and Express, utilizing PostgreSQL as its database. It provides essential features for user authentication, balance management, top-ups, digital transactions (such as mobile credit and game vouchers), and the retrieval of service and banner data.
 
 ---
 
-## 🚀 Fitur Utama
+## 🚀 Key Features
 
-- ✅ **User Registration & Login** (JWT Auth)
-- 💼 **Profile Management**
-- 💳 **Check Balance & Top Up**
-- 📲 **PPOB Services & Transactions**
-- 🖼️ **Public Banners**
-- 🔐 **Protected Routes dengan Bearer Token**
+* **User Registration & Login:** Secure registration and login with JWT (JSON Web Token) authentication.
+* **Profile Management:** Users can manage and update their personal profiles, including profile pictures.
+* **Balance Operations:** Check current balance and facilitate top-up transactions.
+* **PPOB Services & Transactions:** Support for various digital payment services (Pulsa, PPOB) and transaction processing.
+* **Public Banners:** Retrieve a list of promotional banners.
+* **Protected Routes:** All sensitive endpoints are secured with Bearer Token authentication.
+
+---
+
+## 🛠️ Technologies Used
+
+* **Node.js**
+* **Express.js**
+* **PostgreSQL**
+* **JWT (JSON Web Token)**
+* **Multer** (for file uploads)
 
 ---
 
 ## 🧾 API Endpoints
 
-### 🔐 Auth
-- `POST /auth/register` – Register akun baru
-- `POST /auth/login` – Login & mendapatkan JWT token
+### 🔐 Authentication
 
-### 👤 Profile
-- `GET /profile` – Mendapatkan data profile user (private)
-- `PUT /profile` – Mengubah data profile user (private)
-- `POST /profile/image` – Mengubah foto profile (private)
+* `POST /auth/register` – Register a new user account.
+* `POST /auth/login` – Log in and obtain a JWT token.
 
-### 💰 Balance
-- `GET /balance` – Mendapatkan saldo user
-- `POST /topup` – Melakukan top up saldo
+### 👤 User Profile
+
+* `GET /profile` – Retrieve authenticated user's profile data (requires authentication).
+* `PUT /profile` – Update authenticated user's profile data (requires authentication).
+* `POST /profile/image` – Upload or change authenticated user's profile picture (requires authentication).
+
+### 💰 Balance & Top-Up
+
+* `GET /balance` – Get authenticated user's current balance (requires authentication).
+* `POST /topup` – Initiate a balance top-up (requires authentication).
 
 ### 🧾 Transactions
-- `GET /transaction/history` – Mendapatkan riwayat transaksi
-- `POST /transaction` – Membuat transaksi baru
 
-### 🖼️ Banner
-- `GET /banner` – Mendapatkan list banner (public)
+* `GET /transaction/history` – Retrieve authenticated user's transaction history (requires authentication).
+* `POST /transaction` – Create a new digital transaction (requires authentication).
 
-### ⚙️ Services
-- `GET /services` – Mendapatkan list layanan (private)
+### 🖼️ Public Data
+
+* `GET /banner` – Get a list of public banners.
+* `GET /services` – Get a list of available services (requires authentication).
 
 ---
 
-## 🔧 Instalasi & Menjalankan
+## 🔧 Installation & Running
 
-### 1. Clone repository
+### Prerequisites
 
-```bash
-git clone https://github.com/username/nutechpay_api.git
-cd nutechpay_api
+Before you begin, ensure you have the following installed:
+
+* Node.js
+* npm (Node Package Manager)
+* PostgreSQL
+
+### Steps
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/ImA08/nutechapp_api](https://github.com/ImA08/nutechapp_api)
+    cd nutechpay_api
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Create a `.env` file:** Copy the example environment file and configure your settings (e.g., database connection, JWT secret).
+
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Run the server:**
+
+    ```bash
+    npm start
+    ```
+
+---
+
+## 📂 Folder Structure
 
 
-### 2. Install dependencies
+Here's the content in Markdown format, ready for you to copy and paste directly into your README.md file:
 
-```npm install```
+Markdown
 
-### 3. Create a .env file based on .env.example.
+# NutechPay REST API
 
-```cp .env.example .env```
+NutechPay is a robust backend REST API built with Node.js and Express, utilizing PostgreSQL as its database. It provides essential features for user authentication, balance management, top-ups, digital transactions (such as mobile credit and game vouchers), and the retrieval of service and banner data.
 
-### 4. Run the server.
+---
 
-```npm start```
+## 🚀 Key Features
 
+* **User Registration & Login:** Secure registration and login with JWT (JSON Web Token) authentication.
+* **Profile Management:** Users can manage and update their personal profiles, including profile pictures.
+* **Balance Operations:** Check current balance and facilitate top-up transactions.
+* **PPOB Services & Transactions:** Support for various digital payment services (Pulsa, PPOB) and transaction processing.
+* **Public Banners:** Retrieve a list of promotional banners.
+* **Protected Routes:** All sensitive endpoints are secured with Bearer Token authentication.
 
-📂 Folder Structure
-```
+---
+
+## 🛠️ Technologies Used
+
+* **Node.js**
+* **Express.js**
+* **PostgreSQL**
+* **JWT (JSON Web Token)**
+* **Multer** (for file uploads)
+
+---
+
+## 🧾 API Endpoints
+
+### 🔐 Authentication
+
+* `POST /auth/registration` – Register a new user account.
+* `POST /auth/login` – Log in and obtain a JWT token.
+
+### 👤 User Profile
+
+* `GET /profile` – Retrieve authenticated user's profile data (requires authentication).
+* `PUT /profile` – Update authenticated user's profile data (requires authentication).
+* `POST /profile/image` – Upload or change authenticated user's profile picture (requires authentication).
+
+### 💰 Balance & Top-Up
+
+* `GET /balance` – Get authenticated user's current balance (requires authentication).
+* `POST /topup` – Initiate a balance top-up (requires authentication).
+
+### 🧾 Transactions
+
+* `GET /transaction/history` – Retrieve authenticated user's transaction history (requires authentication).
+* `POST /transaction` – Create a new digital transaction (requires authentication).
+
+### 🖼️ Public Data
+
+* `GET /banner` – Get a list of public banners.
+* `GET /services` – Get a list of available services (requires authentication).
+
+---
+
+## 🔧 Installation & Running
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+* Node.js
+* npm (Node Package Manager)
+* PostgreSQL
+
+### Steps
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/username/nutechpay_api.git](https://github.com/username/nutechpay_api.git)
+    cd nutechpay_api
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Create a `.env` file:** Copy the example environment file and configure your settings (e.g., database connection, JWT secret).
+
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Run the server:**
+
+    ```bash
+    npm start
+    ```
+
+---
+
+## 📂 Folder Structure
+
 ├── controllers/
 ├── routes/
 ├── services/
@@ -73,36 +206,43 @@ cd nutechpay_api
 ├── middlewares/
 ├── shared/
 │   └── db/pg.js
-├── uploads/          # Folder penyimpanan foto profile
+├── uploads/          # Folder for storing profile pictures
 ├── app.js
 ├── .env
 ├── .env.example
 ├── README.md
-```
 
 
-🧪 API Testing with Swagger
-```https://api-doc-tht.nutech-integrasi.com/```
+---
 
+## 🧪 API Testing with Swagger
 
-ChatGPT said:
-🛡️ Security
+Explore and test the API endpoints using the Swagger documentation:
 
-Authentication using JWT
+[https://api-doc-tht.nutech-integrasi.com/](https://api-doc-tht.nutech-integrasi.com/)
 
-Input validation on register, login, and profile endpoints
+---
 
-Photo upload using Multer, and the old file will be deleted if it's not the default image
+## 🛡️ Security Features
 
-📝 Additional Notes
+* **JWT Authentication:** All private routes are secured using JSON Web Tokens.
+* **Input Validation:** Robust input validation is implemented on registration, login, and profile endpoints to prevent common vulnerabilities.
+* **Secure Photo Upload:** Profile photo uploads are handled securely using Multer, and old profile pictures are automatically deleted when a new one is uploaded (if not the default image).
 
-Make sure the uploads/ folder exists and has write permission
+---
 
-Ensure the .env file is not committed to Git (it's already listed in .gitignore)
+## 📝 Additional Notes
 
-👤 **Author**  
+* Ensure the `uploads/` folder exists and has appropriate write permissions for profile picture storage.
+* The `.env` file contains sensitive information and is listed in `.gitignore` to prevent it from being committed to the repository.
+
+---
+
+## 👤 Author
+
 **Imanul Aufa** – [@ImA08](https://github.com/ImA08)
 
+---
 
 ## 📄 License
 
