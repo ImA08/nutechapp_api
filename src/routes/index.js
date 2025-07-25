@@ -8,29 +8,28 @@ const topupCtrl = require("../controllers/topup.controller");
 const paymentController = require("../controllers/payment.controller");
 const transactionController = require("../controllers/transaction.controller");
 const upload = require("../middlewares/upload.middleware");
-const userController = require('../controllers/user.controller');
+const userController = require("../controllers/user.controller");
 const profileController = require("../controllers/profile.controller");
-const bannerController = require('../controllers/banner.controller');
-const serviceController = require('../controllers/service.controller');
+const bannerController = require("../controllers/banner.controller");
+const serviceController = require("../controllers/service.controller");
 
 // Auth
 router.post("/registration", authCtrl.register);
 router.post("/login", authCtrl.login);
 
 // User Profile
-router.get('/profile', auth, userController.getProfile);
-router.put("/profile/update", auth, profileController.updateProfile)
+router.get("/profile", auth, userController.getProfile);
+router.put("/profile/update", auth, profileController.updateProfile);
 router.put(
   "/profile/image",
   auth,
-  upload.single('profile_image'),
+  upload.single("profile_image"),
   profileController.updateProfileImage
 );
 
 // Banners & Services
-router.get('/banner', bannerController.getBannerList);
-router.get('/services', auth, serviceController.getServiceList);
-
+router.get("/banner", bannerController.getBannerList);
+router.get("/services", auth, serviceController.getServiceList);
 
 // Transactions
 router.get("/balance", auth, balanceCtrl.getBalance);
