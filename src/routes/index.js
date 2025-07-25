@@ -14,7 +14,7 @@ const bannerController = require('../controllers/banner.controller');
 const serviceController = require('../controllers/service.controller');
 
 // Auth
-router.post("/register", authCtrl.register);
+router.post("/registration", authCtrl.register);
 router.post("/login", authCtrl.login);
 
 // User Profile
