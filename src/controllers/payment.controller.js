@@ -1,15 +1,19 @@
-// src/controllers/payment.controller.js
-const paymentService = require('../services/payment.service');
+const paymentService = require("../services/payment.service");
 
 exports.createTransaction = async (req, res) => {
   const { service_code } = req.body;
   const userId = req.user.id;
 
   try {
-    const transaction = await paymentService.createTransaction(userId, service_code);
+    const transaction = await paymentService.createTransaction(
+      userId,
+      service_code
+    );
     res.status(200).json(transaction);
   } catch (error) {
-    res.status(error.status || 500).json({ status: false, message: error.message });
+    res
+      .status(error.status || 500)
+      .json({ status: false, message: error.message });
   }
 };
 
