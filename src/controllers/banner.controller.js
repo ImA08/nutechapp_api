@@ -1,4 +1,4 @@
-const bannerService = require('../services/banner.service');
+const bannerService = require("../services/banner.service");
 
 const getBannerList = async (req, res) => {
   try {
@@ -6,14 +6,14 @@ const getBannerList = async (req, res) => {
 
     res.status(200).json({
       status: true,
-      message: 'Get banner success',
+      message: "Get banner success",
       data: banners,
     });
   } catch (error) {
-    console.error('Error get banners:', error);
+    console.error("Error get banners:", error);
     res.status(500).json({
       status: false,
-      message: 'Internal Server Error',
+      message: "Internal Server Error",
     });
   }
 };
